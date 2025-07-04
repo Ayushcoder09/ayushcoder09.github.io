@@ -1,6 +1,7 @@
 import { Mail } from "lucide-react";
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import { launchConfetti } from "../lib/confetti";
 
 const Contact = () => {
   const formRef = useRef();
@@ -20,6 +21,7 @@ const Contact = () => {
         () => {
           setStatus("success");
           formRef.current.reset();
+          launchConfetti(); // trigger confetti on success
           setTimeout(() => setStatus(""), 4000);
         },
         (error) => {
