@@ -65,7 +65,7 @@ const Hero = () => {
         </a>
         <a
           ref={btn2Ref}
-          href="/public/AyushResume.pdf"
+          href="/AyushResume.pdf"
           download
           className="inline-block bg-white text-blue-600 border border-blue-600 px-8 py-3 rounded-lg font-semibold shadow hover:bg-blue-50 transition opacity-0"
         >
