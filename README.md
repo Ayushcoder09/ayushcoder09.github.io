@@ -47,7 +47,6 @@
 1. Clone the repository:
    ```bash
    git clone https://github.com/ayushcoder09/ayushcoder09.github.io.git
-   cd ayushcoder09.github.io
    ```
 2. Install dependencies:
    ```bash
