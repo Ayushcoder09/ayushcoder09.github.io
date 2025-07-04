@@ -1,6 +1,6 @@
 # Ayush's Portfolio
 
-![Project Screenshot](public/developer.svg)
+
 
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-18+-blue?logo=react)](https://react.dev/)
@@ -101,4 +101,4 @@ For questions, feedback, or collaboration:
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+© Ayush Maheshwari. Open to remote and hybrid full stack opportunities.

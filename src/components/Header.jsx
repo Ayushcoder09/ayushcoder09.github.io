@@ -1,80 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
 
-const handleResumeDownload = () => {
-  const link = document.createElement("a");
-  link.href = "/AyushResume.pdf";
-  link.download = "AyushResume.pdf";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+const Header = ({ theme, toggleTheme }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-const Header = ({ theme, toggleTheme }) => (
-  <header className="sticky top-0 z-30 bg-white/90 dark:bg-gray-950/90 shadow-lg backdrop-blur-md border-b border-blue-100 dark:border-gray-800 font-sans">
-    <div className="container mx-auto flex flex-wrap justify-between items-center py-3 px-4 md:px-8">
-      <span className="text-2xl font-extrabold text-blue-700 dark:text-blue-400 tracking-tight">
-        Ayush Maheshwari
-      </span>
-      <nav className="hidden md:flex items-center space-x-2 lg:space-x-4 text-base font-medium">
-        <a
-          href="#hero"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Home
-        </a>
-        <a
-          href="#projects"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Projects
-        </a>
-        <a
-          href="#experience"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Experience
-        </a>
-        <a
-          href="#education"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Education
-        </a>
-        <a
-          href="#skills"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Skills
-        </a>
-        <a
-          href="#certificates"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Certificates
-        </a>
-        <a
-          href="#achievements"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Achievements
-        </a>
-        <a
-          href="#contact"
-          className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-        >
-          Contact
-        </a>
-      </nav>
-      <div className="flex items-center space-x-2 mt-4 md:mt-0">
+  return (
+    <header className="sticky top-0 z-30 bg-white/40 dark:bg-gray-950/40 shadow-lg backdrop-blur-md border-b border-blue-100 dark:border-gray-800 font-sans">
+      <div className="container mx-auto flex justify-between items-center py-3 px-4 md:px-8">
+        {/* Hamburger icon for mobile - left of name */}
         <button
-          onClick={handleResumeDownload}
-          className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow hover:bg-blue-700 transition text-sm"
+          className="md:hidden flex items-center p-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition mr-2"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Toggle menu"
         >
-          Download Resume
+          <svg
+            className="w-7 h-7 text-blue-700 dark:text-blue-400"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            {menuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 8h16M4 16h16"
+              />
+            )}
+          </svg>
         </button>
+        <span className="text-2xl font-extrabold text-blue-700 dark:text-blue-400 tracking-tight">
+          Ayush Maheshwari
+        </span>
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center space-x-4 text-base font-medium">
+          <a
+            href="#hero"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Home
+          </a>
+          <a
+            href="#projects"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Projects
+          </a>
+          <a
+            href="#experience"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Experience
+          </a>
+          <a
+            href="#education"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Education
+          </a>
+          <a
+            href="#skills"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Skills
+          </a>
+          <a
+            href="#certificates"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Certificates
+          </a>
+          <a
+            href="#contact"
+            className="nav-link px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition"
+          >
+            Contact
+          </a>
+        </nav>
         <button
           onClick={toggleTheme}
-          className="ml-2 p-2 rounded-full border border-blue-200 dark:border-blue-700 bg-blue-50 dark:bg-gray-800 hover:bg-blue-100 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+          className="ml-2 p-2 rounded-full border border-blue-200 dark:border-blue-700 bg-blue-50/60 dark:bg-gray-800/60 hover:bg-blue-100/80 dark:hover:bg-gray-700/80 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
           aria-label="Toggle dark mode"
         >
           {theme === "dark" ? (
@@ -109,59 +119,62 @@ const Header = ({ theme, toggleTheme }) => (
           )}
         </button>
       </div>
-    </div>
-    {/* Mobile nav */}
-    <nav className="md:hidden flex flex-wrap justify-center gap-2 pb-2 mt-2 text-base font-medium">
-      <a
-        href="#hero"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Home
-      </a>
-      <a
-        href="#projects"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Projects
-      </a>
-      <a
-        href="#experience"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Experience
-      </a>
-      <a
-        href="#education"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Education
-      </a>
-      <a
-        href="#skills"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Skills
-      </a>
-      <a
-        href="#certificates"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Certificates
-      </a>
-      <a
-        href="#achievements"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Achievements
-      </a>
-      <a
-        href="#contact"
-        className="nav-link px-3 py-2 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900 transition"
-      >
-        Contact
-      </a>
-    </nav>
-  </header>
-);
+      {/* Mobile nav - hamburger menu left-aligned */}
+      {menuOpen && (
+        <nav className="md:hidden flex flex-col items-start gap-2 pb-2 mt-2 text-base font-medium animate-fade-in-up pl-4">
+          <a
+            href="#hero"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </a>
+          <a
+            href="#projects"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Projects
+          </a>
+          <a
+            href="#experience"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Experience
+          </a>
+          <a
+            href="#education"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Education
+          </a>
+          <a
+            href="#skills"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Skills
+          </a>
+          <a
+            href="#certificates"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Certificates
+          </a>
+          <a
+            href="#contact"
+            className="nav-link w-full px-3 py-2 rounded-lg hover:bg-blue-100/60 dark:hover:bg-blue-900/60 transition text-left"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact
+          </a>
+        </nav>
+      )}
+    </header>
+  );
+};
 
 export default Header;

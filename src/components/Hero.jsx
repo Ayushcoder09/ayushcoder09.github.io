@@ -1,39 +1,83 @@
-import { User } from "lucide-react";
+import { useEffect, useRef } from "react";
 
-const Hero = () => (
-  <section
-    className="container mx-auto flex flex-col items-center py-8 px-4 text-center"
-    id="hero"
-  >
-    <div className="flex items-center justify-center mb-2">
-      <User className="text-blue-600 mr-2" size={36} />
-      <h1 className="text-4xl md:text-5xl font-extrabold">
-        Hi, I'm <span className="text-blue-600">Ayush Maheshwari</span>
-      </h1>
-    </div>
-    <p className="text-lg md:text-xl mb-6">
-      Full Stack Developer | Java Spring Boot | Angular | React | Microservices
-      | Agile
-    </p>
-    <p className="mb-6 text-gray-700 dark:text-gray-200 max-w-xl mx-auto">
-      With 2.9 years of hands-on experience as a Full Stack Developer, I excel
-      in designing and building robust backend systems using Java, Spring Boot,
-      and microservices, as well as delivering dynamic front-end applications
-      with Angular. I am highly skilled in Agile methodologies and the full
-      software development lifecycle (SDLC), ensuring timely and efficient
-      project delivery. My expertise spans cloud platforms (AWS, Azure), CI/CD
-      automation with Jenkins, and collaborative code management using GitHub. I
-      am passionate about solving complex technical challenges, optimizing
-      system performance, and driving innovation in cross-functional teams to
-      deliver impactful business solutions.
-    </p>
-    <a
-      href="#projects"
-      className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition"
+const Hero = () => {
+  const headingRef = useRef(null);
+  const subtextRef = useRef(null);
+  const btn1Ref = useRef(null);
+  const btn2Ref = useRef(null);
+
+  useEffect(() => {
+    headingRef.current.classList.add("animate-fade-in-up");
+    setTimeout(() => {
+      subtextRef.current.classList.add("animate-fade-in-up");
+    }, 300);
+    setTimeout(() => {
+      btn1Ref.current.classList.add("animate-fade-in-up");
+      btn2Ref.current.classList.add("animate-fade-in-up");
+    }, 600);
+  }, []);
+
+  return (
+    <section
+      className="container mx-auto flex flex-col items-center py-16 px-4 text-center"
+      id="hero"
     >
-      View My Work
-    </a>
-  </section>
-);
+      <style>{`
+        @keyframes fadeInUp {
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+          animation: float 2.5s ease-in-out infinite;
+        }
+      `}</style>
+      <div className="flex items-center justify-center mb-4">
+        <h1
+          ref={headingRef}
+          className="text-5xl md:text-6xl font-extrabold opacity-0"
+        >
+          Building Ideas Into{" "}
+          <span className="text-blue-600">Impactful Solutions</span>
+        </h1>
+      </div>
+      <p
+        ref={subtextRef}
+        className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-200 max-w-2xl mx-auto opacity-0"
+      >
+        I’m Ayush Maheshwari, a passionate Full Stack Developer specializing in
+        Java, Spring Boot, Angular, and React. I turn complex challenges into
+        seamless digital experiences for businesses and users alike.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <a
+          ref={btn1Ref}
+          href="#projects"
+          className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition opacity-0"
+        >
+          View My Work
+        </a>
+        <a
+          ref={btn2Ref}
+          href="/public/AyushResume.pdf"
+          download
+          className="inline-block bg-white text-blue-600 border border-blue-600 px-8 py-3 rounded-lg font-semibold shadow hover:bg-blue-50 transition opacity-0"
+        >
+          Download Resume
+        </a>
+      </div>
+      <p className="text-base text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+        Experienced in cloud platforms (AWS, Azure), CI/CD automation, and Agile
+        teams. Let’s build something amazing together!
+      </p>
+    </section>
+  );
+};
 
 export default Hero;
