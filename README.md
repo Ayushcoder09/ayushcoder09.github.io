@@ -1,4 +1,4 @@
-# Ayush's Portfolio
+# Ayush's Portfolio :)
 
 
 
@@ -100,4 +100,5 @@ For questions, feedback, or collaboration:
 
 ## License
 
+MIT 
 © Ayush Maheshwari. Open to remote and hybrid full stack opportunities.
