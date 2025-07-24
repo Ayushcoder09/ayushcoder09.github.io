@@ -52,7 +52,7 @@ const Hero = () => {
         className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-200 max-w-2xl mx-auto opacity-0"
       >
         I’m Ayush Maheshwari, a passionate Full Stack Developer specializing in
-        Java, Spring Boot, Angular, and React. I turn complex challenges into
+        Java, Spring Boot, and React. I turn complex challenges into
         seamless digital experiences for businesses and users alike.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

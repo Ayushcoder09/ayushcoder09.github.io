@@ -30,12 +30,12 @@ const Skills = () => (
           Frameworks & Libraries
         </span>
         <ul className="text-gray-700 dark:text-gray-200">
-          <li>Angular</li>
           <li>Spring Boot</li>
           <li>jQuery</li>
           <li>React</li>
           <li>Maven</li>
           <li>Node.js</li>
+          <li>Tailwind</li>
         </ul>
       </div>
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 text-center">
@@ -48,6 +48,7 @@ const Skills = () => (
         <ul className="text-gray-700 dark:text-gray-200">
           <li>Git</li>
           <li>GitHub</li>
+          <li>Docker</li>
           <li>Jenkins</li>
           <li>AWS</li>
           <li>Azure DevOps</li>
@@ -61,9 +62,10 @@ const Skills = () => (
           Other Tools
         </span>
         <ul className="text-gray-700 dark:text-gray-200">
+          <li>MySQL</li>
+          <li>MongoDB</li>
           <li>Swagger</li>
           <li>Github Copilot</li>
-          <li>MySQL</li>
           <li>Jira</li>
         </ul>
       </div>

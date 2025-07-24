@@ -15,7 +15,7 @@ const Experience = () => (
         <ul className="list-disc list-inside mt-2 text-gray-700 dark:text-gray-200">
           <li>
             Contributed to the development of a Single Page Application (SPA)
-            based on micro-frontend architecture using Angular, enhancing user
+            based on micro-frontend architecture using React, enhancing user
             engagement by 15%.
           </li>
           <li>
